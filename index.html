@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tom Ayorinde — Cloud &amp; DevOps Engineer</title>
+<meta name="description" content="Cloud and DevOps engineering portfolio — AWS deployments, CI/CD pipelines, and infrastructure builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow"><span class="dot"></span>open to cloud engineer / cloud architect / devops roles</div>
+    <h1>Tom Ayorinde</h1>
+    <p class="role">Cloud engineer and DevOps practitioner building and deploying infrastructure on AWS — from hand-provisioned EC2 boxes to containerized, load-balanced production systems.</p>
+    <div class="hero-links">
+      <a href="https://github.com/Zaamaar" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://medium.com/@ayotomiwavictor1" target="_blank" rel="noopener">Medium</a>
+      <a href="#" target="_blank" rel="noopener" id="linkedin-link">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="section-head">
+    <h2>Build log</h2>
+    <div class="filters" id="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="live">Live</button>
+      <button data-filter="building">Building</button>
+      <button data-filter="archived">Archived</button>
+    </div>
+  </div>
+
+  <div class="manifest-grid" id="manifest-grid"></div>
+</main>
+
+<footer class="wrap">
+  <p>Built and maintained by Tom Ayorinde. Last updated manually — see js/projects-data.js.</p>
+</footer>
+
+<script src="projects-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
