@@ -1,6 +1,7 @@
 (function () {
   const grid = document.getElementById('manifest-grid');
   const filterBar = document.getElementById('filters');
+  const searchInput = document.getElementById('search-input');
 
   const STATUS_LABEL = {
     live: 'Live',
@@ -17,6 +18,8 @@
 
   // Sort newest build first
   const projects = [...PROJECTS].sort((a, b) => b.build - a.build);
+
+  let state = { status: 'all', query: '' };
 
   function cardHTML(p, index) {
     const links = Object.entries(p.links || {})
@@ -47,10 +50,21 @@
     `;
   }
 
-  function render(filter) {
-    const filtered = filter === 'all' ? projects : projects.filter((p) => p.status === filter);
+  function matchesQuery(p, query) {
+    if (!query) return true;
+    const haystack = [p.title, p.blurb, ...(p.stack || [])]
+      .join(' ')
+      .toLowerCase();
+    return haystack.includes(query.toLowerCase());
+  }
+
+  function render() {
+    const filtered = projects
+      .filter((p) => state.status === 'all' || p.status === state.status)
+      .filter((p) => matchesQuery(p, state.query));
+
     if (!filtered.length) {
-      grid.innerHTML = '<p class="no-results">No projects match this filter yet.</p>';
+      grid.innerHTML = '<p class="no-results">No projects match that search yet.</p>';
       return;
     }
     grid.innerHTML = filtered.map(cardHTML).join('');
@@ -61,8 +75,14 @@
     if (!btn) return;
     filterBar.querySelectorAll('button').forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
-    render(btn.dataset.filter);
+    state.status = btn.dataset.filter;
+    render();
   });
 
-  render('all');
+  searchInput.addEventListener('input', (e) => {
+    state.query = e.target.value.trim();
+    render();
+  });
+
+  render();
 })();
