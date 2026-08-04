@@ -7,8 +7,8 @@
   --ink: #16213E;
   --ink-soft: #4A5578;
   --ink-faint: #7B87A8;
-  --line: #C7D0DE;
-  --line-strong: #9FADC4;
+  --line: hsl(var(--hue), 26%, 83%);
+  --line-strong: hsl(var(--hue), 24%, 70%);
 
   --signal-live: #1F8A5F;
   --signal-live-bg: #E3F3EB;
