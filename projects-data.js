@@ -18,9 +18,26 @@
  *   stack       - array of short strings, the tech involved
  *   links       - any of: github, live, medium, linkedin
  *                 omit a key entirely if you don't have that link yet
+ *   spotlight   - OPTIONAL. A fixed hex color (e.g. "#E8543E") that gives
+ *                 this card a bold accent stripe + corner tag, independent
+ *                 of the color-spectrum slider. Use sparingly — 1-2 cards
+ *                 max, or it stops feeling special. Omit for a normal card.
  */
 
 const PROJECTS = [
+  {
+    id: "devops-sandbox",
+    build: 9,
+    title: "DevOps Sandbox",
+    blurb: "Placeholder description — edit this. A sandboxed environment-provisioning build; confirm the details and status here.",
+    status: "building",
+    date: "2026",
+    stack: ["Docker", "EC2"],
+    spotlight: "#12A594",
+    links: {
+      github: "https://github.com/Zaamaar/devops-sandbox"
+    }
+  },
   {
     id: "cinetrack",
     build: 8,
@@ -29,6 +46,7 @@ const PROJECTS = [
     status: "live",
     date: "Jul 2026",
     stack: ["Node.js", "Express", "PostgreSQL", "ECS Fargate", "RDS", "ALB", "ECR"],
+    spotlight: "#E8543E",
     links: {
       github: "https://github.com/Zaamaar/cinetrack-api",
       live: "https://cinetrack.hngayotomiwa.online",
@@ -40,11 +58,11 @@ const PROJECTS = [
     build: 7,
     title: "SwiftDeploy",
     blurb: "A self-service DevOps sandbox platform — spins up isolated Docker environments on demand behind a dynamic Nginx reverse proxy, controlled through a FastAPI control plane.",
-    status: "live",
+    status: "archived",
     date: "May 2026",
     stack: ["Docker", "FastAPI", "Nginx", "EC2", "Python"],
     links: {
-      github: "https://github.com/Zaamaar",
+      github: "https://github.com/Zaamaar/swiftdeploy-project",
       medium: "https://medium.com/@ayotomiwavictor1/i-built-a-miniature-heroku-from-scratch-heres-everything-i-learned-831c4292c1a3"
     }
   },
@@ -53,11 +71,11 @@ const PROJECTS = [
     build: 6,
     title: "Real-Time DDoS Detection Engine",
     blurb: "A sliding-window traffic monitor with z-score anomaly detection that automatically blocks attacking IPs via iptables and alerts the team over Slack.",
-    status: "live",
+    status: "archived",
     date: "Jun 2026",
     stack: ["Python", "Docker Compose", "Nginx", "iptables", "Slack API"],
     links: {
-      github: "https://github.com/Zaamaar",
+      github: "https://github.com/Zaamaar/anomaly_detection_engine",
       live: "https://monitor.hngayotomiwa.online",
       medium: "https://medium.com/@ayotomiwavictor1/i-built-a-real-time-ddos-detection-engine-from-scratch-heres-how-it-works-0b1bf5e165b0"
     }
@@ -71,7 +89,7 @@ const PROJECTS = [
     date: "Jul 2026",
     stack: ["Node.js", "Express", "PostgreSQL", "Socket.io", "React Native", "Twilio"],
     links: {
-      github: "https://github.com/Zaamaar"
+      github: "https://github.com/Zaamaar/find-backend"
     }
   },
   {
@@ -83,7 +101,7 @@ const PROJECTS = [
     date: "May 2026",
     stack: ["Docker", "GitHub Actions", "Node.js", "FastAPI", "Redis"],
     links: {
-      github: "https://github.com/Zaamaar",
+      github: "https://github.com/Zaamaar/hng14-stage2-devops",
       medium: "https://medium.com/@ayotomiwavictor1/from-broken-code-to-production-ready-how-i-containerized-a-microservices-app-and-built-a-ci-cd-a6b5cfb225b4"
     }
   },

@@ -31,11 +31,15 @@
       .map((s) => `<span class="stack-tag">${s}</span>`)
       .join('');
 
+    const spotlightStyle = p.spotlight ? ` style="--spotlight:${p.spotlight};animation-delay:${Math.min(index * 40, 300)}ms"` : ` style="animation-delay:${Math.min(index * 40, 300)}ms"`;
+    const spotlightClass = p.spotlight ? ' card--spotlight' : '';
+    const spotlightDot = p.spotlight ? '<span class="spotlight-dot"></span>' : '';
+
     return `
-      <article class="card" data-status="${p.status}" style="animation-delay:${Math.min(index * 40, 300)}ms">
+      <article class="card${spotlightClass}" data-status="${p.status}"${spotlightStyle}>
         <div class="card-head">
           <div>
-            <div class="card-build">BUILD #${String(p.build).padStart(2, '0')}</div>
+            <div class="card-build">${spotlightDot}BUILD #${String(p.build).padStart(2, '0')}</div>
             <h3 class="card-title">${p.title}</h3>
           </div>
           <span class="status-pill status-${p.status}">${STATUS_LABEL[p.status] || p.status}</span>
