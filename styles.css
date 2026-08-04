@@ -208,6 +208,7 @@ a { color: var(--accent); }
   cursor: grab;
   touch-action: none;
   user-select: none;
+  -webkit-user-drag: none;
   transition: box-shadow 0.15s ease;
 }
 
@@ -272,12 +273,6 @@ a { color: var(--accent); }
 .search-box:focus-within {
   border-color: var(--accent);
   animation-play-state: paused;
-}
-
-.search-prompt {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--ink-faint);
 }
 
 .search-box input {
@@ -450,11 +445,6 @@ a { color: var(--accent); }
   gap: 4px;
 }
 
-.card-links a::before {
-  content: '$';
-  color: var(--ink-faint);
-}
-
 .card-links a:hover { text-decoration: underline; }
 
 .no-results {
@@ -469,7 +459,21 @@ a { color: var(--accent); }
    draggable spectrum slider, so they always read as intentional
    ============================================================ */
 .card--spotlight {
+  position: relative;
   border-top: 4px solid var(--spotlight);
+  overflow: visible;
+}
+
+.card--spotlight::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  width: 22px;
+  height: 22px;
+  background: var(--spotlight);
+  transform: rotate(12deg);
+  box-shadow: 0 2px 5px rgba(22, 33, 62, 0.25);
 }
 
 .spotlight-dot {

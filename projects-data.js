@@ -26,21 +26,8 @@
 
 const PROJECTS = [
   {
-    id: "devops-sandbox",
-    build: 9,
-    title: "DevOps Sandbox",
-    blurb: "Placeholder description — edit this. A sandboxed environment-provisioning build; confirm the details and status here.",
-    status: "building",
-    date: "2026",
-    stack: ["Docker", "EC2"],
-    spotlight: "#12A594",
-    links: {
-      github: "https://github.com/Zaamaar/devops-sandbox"
-    }
-  },
-  {
     id: "cinetrack",
-    build: 8,
+    build: 9,
     title: "CineTrack",
     blurb: "Movie watchlist and rating API with a full AWS deployment — ECS Fargate, an ALB, RDS, and a custom ACM-secured domain.",
     status: "live",
@@ -54,6 +41,19 @@ const PROJECTS = [
     }
   },
   {
+    id: "devops-sandbox",
+    build: 8,
+    title: "DevOps Sandbox",
+    blurb: "A self-service platform for spinning up isolated, TTL-based containerized environments on demand — create, monitor, and destroy them via CLI or REST API, with a built-in chaos-engineering toggle to simulate crashes, network loss, and CPU stress.",
+    status: "archived",
+    date: "2026",
+    stack: ["Docker", "FastAPI", "Nginx", "Python"],
+    spotlight: "#12A594",
+    links: {
+      github: "https://github.com/Zaamaar/devops-sandbox"
+    }
+  },
+  {
     id: "swiftdeploy",
     build: 7,
     title: "SwiftDeploy",
@@ -61,6 +61,7 @@ const PROJECTS = [
     status: "archived",
     date: "May 2026",
     stack: ["Docker", "FastAPI", "Nginx", "EC2", "Python"],
+    spotlight: "#6C4CF1",
     links: {
       github: "https://github.com/Zaamaar/swiftdeploy-project",
       medium: "https://medium.com/@ayotomiwavictor1/i-built-a-miniature-heroku-from-scratch-heres-everything-i-learned-831c4292c1a3"
@@ -88,6 +89,7 @@ const PROJECTS = [
     status: "building",
     date: "Jul 2026",
     stack: ["Node.js", "Express", "PostgreSQL", "Socket.io", "React Native", "Twilio"],
+    spotlight: "#D6336C",
     links: {
       github: "https://github.com/Zaamaar/find-backend"
     }

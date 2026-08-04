@@ -34,6 +34,7 @@
   }
 
   // Initial paint + keep it correct across resizes/reflow
+  applyHue(STARTING_HUE);
   window.addEventListener('load', positionThumbForHue);
   window.addEventListener('resize', positionThumbForHue);
   positionThumbForHue();
@@ -60,6 +61,10 @@
   }
   thumb.addEventListener('pointerup', endDrag);
   thumb.addEventListener('pointercancel', endDrag);
+
+  // Anchors have native browser drag-and-drop built in, which hijacks
+  // pointermove tracking after the first move. Kill it explicitly.
+  thumb.addEventListener('dragstart', (e) => e.preventDefault());
 
   // A drag shouldn't also trigger the LinkedIn navigation.
   // A plain click (no movement) still opens LinkedIn normally.
