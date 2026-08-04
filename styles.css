@@ -50,6 +50,19 @@ body {
   background-position: -1px -1px;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background:
+    radial-gradient(ellipse 60% 42% at 0% 0%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 100% 0%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 0% 100%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%),
+    radial-gradient(ellipse 60% 42% at 100% 100%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%);
+}
+
 a { color: var(--accent); }
 
 .wrap {
