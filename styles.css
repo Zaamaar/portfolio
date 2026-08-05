@@ -2,13 +2,15 @@
    TOKENS
    ============================================================ */
 :root {
-  --paper: #EDF1F5;
-  --paper-raised: #FFFFFF;
-  --ink: #16213E;
-  --ink-soft: #4A5578;
-  --ink-faint: #7B87A8;
-  --line: hsl(var(--hue), 26%, 83%);
-  --line-strong: hsl(var(--hue), 24%, 70%);
+  --hue: 215;
+
+  --paper: hsl(var(--hue), 32%, 93%);
+  --paper-raised: hsl(var(--hue), 24%, 98%);
+  --ink: hsl(var(--hue), 48%, 17%);
+  --ink-soft: hsl(var(--hue), 24%, 38%);
+  --ink-faint: hsl(var(--hue), 21%, 57%);
+  --line: hsl(var(--hue), 32%, 80%);
+  --line-strong: hsl(var(--hue), 30%, 64%);
 
   --signal-live: #1F8A5F;
   --signal-live-bg: #E3F3EB;
@@ -17,9 +19,8 @@
   --signal-archived: #6B7590;
   --signal-archived-bg: #E7EAF1;
 
-  --accent: hsl(var(--hue), 59%, 41%);
-  --accent-dim: hsl(var(--hue), 41%, 64%);
-  --hue: 215;
+  --accent: hsl(var(--hue), 64%, 40%);
+  --accent-dim: hsl(var(--hue), 46%, 63%);
 
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
   --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
@@ -57,10 +58,10 @@ body::before {
   pointer-events: none;
   z-index: 5;
   background:
-    radial-gradient(ellipse 60% 42% at 0% 0%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 100% 0%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 0% 100%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 42% at 100% 100%, hsla(var(--hue), 70%, 55%, 0.16), transparent 60%);
+    radial-gradient(ellipse 65% 48% at 0% 0%, hsla(var(--hue), 70%, 55%, 0.30), transparent 65%),
+    radial-gradient(ellipse 65% 48% at 100% 0%, hsla(var(--hue), 70%, 55%, 0.30), transparent 65%),
+    radial-gradient(ellipse 65% 48% at 0% 100%, hsla(var(--hue), 70%, 55%, 0.30), transparent 65%),
+    radial-gradient(ellipse 65% 48% at 100% 100%, hsla(var(--hue), 70%, 55%, 0.30), transparent 65%);
 }
 
 a { color: var(--accent); }
@@ -198,8 +199,8 @@ a { color: var(--accent); }
   border-radius: 999px;
   background: linear-gradient(
     90deg,
-    hsl(0, 59%, 41%), hsl(60, 59%, 41%), hsl(120, 59%, 41%),
-    hsl(180, 59%, 41%), hsl(240, 59%, 41%), hsl(300, 59%, 41%), hsl(360, 59%, 41%)
+    hsl(0, 64%, 40%), hsl(60, 64%, 40%), hsl(120, 64%, 40%),
+    hsl(180, 64%, 40%), hsl(240, 64%, 40%), hsl(300, 64%, 40%), hsl(360, 64%, 40%)
   );
   box-shadow: inset 0 0 0 1px rgba(22, 33, 62, 0.15);
 }
@@ -275,8 +276,8 @@ a { color: var(--accent); }
 }
 
 @keyframes breathe {
-  0%, 100% { box-shadow: 0 0 0 0 hsla(var(--hue), 59%, 41%, 0); }
-  50% { box-shadow: 0 0 0 5px hsla(var(--hue), 59%, 41%, 0.1); }
+  0%, 100% { box-shadow: 0 0 0 0 hsla(var(--hue), 64%, 40%, 0); }
+  50% { box-shadow: 0 0 0 6px hsla(var(--hue), 64%, 40%, 0.16); }
 }
 
 @media (prefers-reduced-motion: reduce) {
