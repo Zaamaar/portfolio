@@ -175,6 +175,117 @@ a { color: var(--accent); }
 }
 
 /* ============================================================
+   TECH STRIP
+   ============================================================ */
+.tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tech-strip span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent-dim);
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   FEATURED BADGE
+   ============================================================ */
+.featured-badge {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+/* ============================================================
+   ARCHITECTURE DIAGRAM
+   ============================================================ */
+.arch-diagram {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-top: 4px;
+}
+
+.arch-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+
+.arch-inner {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.arch-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.arch-node {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  text-align: center;
+  width: 100%;
+}
+
+.arch-arrow {
+  font-size: 13px;
+  color: var(--accent-dim);
+  text-align: center;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.arch-side {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 110px;
+  padding-top: 4px;
+  border-left: 1px dashed var(--line-strong);
+  padding-left: 12px;
+}
+
+.arch-side-item {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  padding: 4px 8px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+/* ============================================================
    COLOR SPECTRUM SLIDER (LinkedIn is the draggable thumb)
    ============================================================ */
 .spectrum-row {
@@ -514,6 +625,9 @@ a { color: var(--accent); }
   .hero-photo img { width: 128px; height: 128px; }
   .spectrum-row { justify-content: center; flex-wrap: wrap; }
   .spectrum-track { max-width: 180px; }
+  .tech-strip { justify-content: center; }
+  .arch-side { min-width: 90px; }
+  .arch-side-item { font-size: 9px; }
 }
 
 @media (max-width: 480px) {
