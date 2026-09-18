@@ -83,7 +83,7 @@ const PROJECTS = [
     date: "May 2026",
     stack: ["Docker", "GitHub Actions", "Node.js", "FastAPI", "Redis"],
     links: {
-      github: "https://github.com/Zaamaar",
+      github: "https://github.com/Zaamaar/hng14-stage2-devops",
       medium: "https://medium.com/@ayotomiwavictor1/from-broken-code-to-production-ready-how-i-containerized-a-microservices-app-and-built-a-ci-cd-a6b5cfb225b4"
     }
   },
@@ -117,12 +117,13 @@ const PROJECTS = [
     id: "zamweather",
     build: 1,
     title: "ZamWeather",
-    blurb: "A weather app deployed on a 3-tier AWS architecture, provisioned entirely with Terraform.",
-    status: "archived",
+    blurb: "A weather app deployed on a 3-tier AWS architecture, provisioned entirely with Terraform — every design trade-off (cost, quota limits, account restrictions) documented honestly in the README.",
+    status: "live",
     date: "2026",
-    stack: ["Terraform", "AWS", "3-tier architecture"],
+    stack: ["Terraform", "AWS", "3-tier architecture", "Flask", "MySQL"],
     links: {
-      github: "https://github.com/Zaamaar/zamweather"
+      github: "https://github.com/Zaamaar/zamweather",
+      live: "https://zamweather.netlify.app"
     }
   }
 ];
