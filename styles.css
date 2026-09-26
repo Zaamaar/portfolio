@@ -66,6 +66,25 @@ a { color: var(--accent); }
   background: var(--paper);
 }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line-strong);
+  box-shadow: 0 0 0 4px var(--paper-raised), 0 4px 14px rgba(22, 33, 62, 0.12);
+  flex-shrink: 0;
+}
+
+.hero-copy { flex: 1; min-width: 260px; }
+
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -136,55 +155,97 @@ a { color: var(--accent); }
   font-size: 12px;
 }
 
-/* ============================================================
-   SECTION HEADER
-   ============================================================ */
-.section-head {
-  padding: 44px 0 20px;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+.hero-link-resume {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
 }
 
-.section-head h2 {
+@media (max-width: 560px) {
+  .hero-inner { flex-direction: column; align-items: flex-start; }
+  .hero-avatar { width: 96px; height: 96px; }
+}
+
+/* ============================================================
+   TIER NAV (quick jump)
+   ============================================================ */
+.tier-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 20px 0 0;
+}
+
+.tier-nav a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.tier-nav a:hover { border-color: var(--accent); color: var(--ink); }
+
+.tier-nav .swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tier-nav a[href="#tier-live"] .swatch { background: var(--signal-live); }
+.tier-nav a[href="#tier-operated"] .swatch { background: var(--accent); }
+.tier-nav a[href="#tier-design"] .swatch { background: var(--ink-faint); }
+
+/* ============================================================
+   TIER SECTIONS
+   ============================================================ */
+.tier-section {
+  padding: 48px 0 8px;
+  scroll-margin-top: 20px;
+}
+
+.tier-head { padding-bottom: 22px; }
+
+.tier-head-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.tier-label {
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-faint);
   margin: 0;
 }
 
-.filters {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.filters button {
+.tier-count {
   font-family: var(--font-mono);
-  font-size: 12px;
-  background: none;
+  font-size: 11px;
+  color: var(--ink-faint);
   border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.tier-desc {
+  font-size: 13px;
   color: var(--ink-soft);
-  padding: 5px 11px;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.15s ease;
+  max-width: 60ch;
+  line-height: 1.5;
+  margin: 6px 0 0;
 }
 
-.filters button:hover {
-  border-color: var(--accent);
-  color: var(--ink);
-}
-
-.filters button.active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-}
+.tier-section-live .tier-label { color: var(--signal-live); }
+.tier-section-operated .tier-label { color: var(--accent); }
+.tier-section-design .tier-label { color: var(--ink-faint); }
 
 /* ============================================================
    PROJECT MANIFEST CARDS
@@ -206,6 +267,14 @@ a { color: var(--accent); }
   transform: translateY(10px);
   animation: rise 0.5s ease forwards;
 }
+
+.card.tier-live { border-left: 4px solid var(--signal-live); }
+.card.tier-operated { border-left: 4px solid var(--accent); }
+.card.tier-design {
+  border-left: 4px dashed var(--line-strong);
+  background: var(--paper);
+}
+.card.tier-design .card-title { color: var(--ink-soft); }
 
 @media (prefers-reduced-motion: reduce) {
   .card { opacity: 1; transform: none; animation: none; }

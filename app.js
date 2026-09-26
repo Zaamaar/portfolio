@@ -1,35 +1,17 @@
 (function () {
-  const grid = document.getElementById('manifest-grid');
-  const filterBar = document.getElementById('filters');
+  const root = document.getElementById('manifest-root');
 
-  const STATUS_LABEL = {
-    live: 'Live',
-    building: 'Building',
-    archived: 'Archived'
-  };
-
-  const LINK_LABEL = {
-    github: 'github',
-    live: 'live',
-    medium: 'medium',
-    linkedin: 'linkedin'
-  };
-
-  // Sort newest build first
-  const projects = [...PROJECTS].sort((a, b) => b.build - a.build);
+  const STATUS_LABEL = { live: 'Live', building: 'Building', archived: 'Archived' };
+  const LINK_LABEL = { github: 'github', live: 'live', medium: 'medium' };
 
   function cardHTML(p, index) {
     const links = Object.entries(p.links || {})
       .filter(([, url]) => url)
       .map(([key, url]) => `<a href="${url}" target="_blank" rel="noopener">${LINK_LABEL[key] || key}</a>`)
       .join('');
-
-    const stack = (p.stack || [])
-      .map((s) => `<span class="stack-tag">${s}</span>`)
-      .join('');
-
+    const stack = (p.stack || []).map((s) => `<span class="stack-tag">${s}</span>`).join('');
     return `
-      <article class="card" data-status="${p.status}" style="animation-delay:${Math.min(index * 40, 300)}ms">
+      <article class="card tier-${p.tier}" data-status="${p.status}" style="animation-delay:${Math.min(index * 30, 240)}ms">
         <div class="card-head">
           <div>
             <div class="card-build">BUILD #${String(p.build).padStart(2, '0')}</div>
@@ -47,22 +29,30 @@
     `;
   }
 
-  function render(filter) {
-    const filtered = filter === 'all' ? projects : projects.filter((p) => p.status === filter);
-    if (!filtered.length) {
-      grid.innerHTML = '<p class="no-results">No projects match this filter yet.</p>';
-      return;
-    }
-    grid.innerHTML = filtered.map(cardHTML).join('');
+  function sectionHTML(tier, index) {
+    const items = [...PROJECTS]
+      .filter((p) => p.tier === tier.key)
+      .sort((a, b) => b.build - a.build);
+    if (!items.length) return '';
+    return `
+      <section class="tier-section tier-section-${tier.key}" id="tier-${tier.key}">
+        <div class="tier-head">
+          <div class="tier-head-top">
+            <h2 class="tier-label">${tier.label}</h2>
+            <span class="tier-count">${items.length}</span>
+          </div>
+          <p class="tier-desc">${tier.desc}</p>
+        </div>
+        <div class="manifest-grid">
+          ${items.map((p, i) => cardHTML(p, i)).join('')}
+        </div>
+      </section>
+    `;
   }
 
-  filterBar.addEventListener('click', (e) => {
-    const btn = e.target.closest('button');
-    if (!btn) return;
-    filterBar.querySelectorAll('button').forEach((b) => b.classList.remove('active'));
-    btn.classList.add('active');
-    render(btn.dataset.filter);
-  });
+  function render() {
+    root.innerHTML = TIERS.map((t, i) => sectionHTML(t, i)).join('');
+  }
 
-  render('all');
+  render();
 })();
