@@ -2,45 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tom Ayorinde — Cloud &amp; DevOps Engineer</title>
 <meta name="description" content="Cloud and DevOps engineering portfolio — AWS deployments, CI/CD pipelines, infrastructure builds, and technical writing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap hero-inner">
-    <img class="hero-avatar" src="assets/avatar.jpg" alt="Tom Ayorinde" width="120" height="120">
-    <div class="hero-copy">
-      <div class="hero-eyebrow"><span class="dot"></span>open to cloud engineer / cloud architect / devops roles</div>
-      <h1>Tom Ayorinde</h1>
-      <p class="role">Cloud engineer and DevOps practitioner building and deploying infrastructure on AWS — from hand-provisioned EC2 boxes to containerized, load-balanced production systems.</p>
-      <div class="hero-links">
-        <a href="https://github.com/Zaamaar" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://medium.com/@ayotomiwavictor1" target="_blank" rel="noopener">Medium</a>
-        <a href="https://www.linkedin.com/in/tom-ayorinde-5a1b20378/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="assets/resume.pdf" target="_blank" rel="noopener" class="hero-link-resume">Resume</a>
-      </div>
+<div class="menubar">
+  <div class="menubar-left">
+    <span class="menubar-brand">🖥 TomOS</span>
+    <span class="menubar-item">File</span>
+    <span class="menubar-item">View</span>
+    <span class="menubar-item">Go</span>
+  </div>
+  <div class="menubar-right">
+    <span class="menubar-status"><span class="dot"></span>Open to work</span>
+    <span id="clock">00:00:00</span>
+  </div>
+</div>
+
+<div class="desktop">
+  <div class="desk-profile">
+    <div class="desk-avatar-frame desk-icon-float">
+      <img class="desk-avatar" src="assets/avatar.jpg" alt="Tom Ayorinde">
+    </div>
+    <h1 class="desk-name">Tom Ayorinde</h1>
+    <p class="desk-role">AWS-certified Cloud &amp; DevOps engineer building production infrastructure — containerized services, CI/CD pipelines, and monitored systems running on ECS and EKS. Every build documented in public.</p>
+
+    <div class="desk-shortcuts">
+      <a class="desk-icon" href="https://github.com/Zaamaar" target="_blank" rel="noopener">
+        <span class="desk-icon-glyph">🐙</span><span class="desk-icon-label">GitHub</span>
+      </a>
+      <a class="desk-icon" href="https://medium.com/@ayotomiwavictor1" target="_blank" rel="noopener">
+        <span class="desk-icon-glyph">✍️</span><span class="desk-icon-label">Medium</span>
+      </a>
+      <a class="desk-icon" href="https://www.linkedin.com/in/tom-ayorinde-5a1b20378/" target="_blank" rel="noopener">
+        <span class="desk-icon-glyph">💼</span><span class="desk-icon-label">LinkedIn</span>
+      </a>
+      <a class="desk-icon" href="assets/resume.pdf" target="_blank" rel="noopener">
+        <span class="desk-icon-glyph">📄</span><span class="desk-icon-label">Resume.pdf</span>
+      </a>
     </div>
   </div>
-</header>
 
-<main class="wrap">
-  <div class="section-head">
-    <h2>Build log</h2>
+  <nav class="folder-desk" id="folder-desk"></nav>
+  <p class="folder-hint">psst — click a folder to look inside</p>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="window" id="window" role="dialog" aria-modal="true">
+  <div class="window-titlebar">
+    <span class="win-dot close" id="win-close"></span>
+    <span class="win-dot min"></span>
+    <span class="win-dot max"></span>
+    <span class="window-title" id="window-title">FOLDER</span>
   </div>
-
-  <nav class="folder-tabs" id="folder-tabs"></nav>
-  <div class="folder-panel" id="folder-panel"></div>
-</main>
-
-<footer class="wrap">
-  <p>Built and maintained by Tom Ayorinde. Last updated manually — see projects-data.js.</p>
-</footer>
+  <div class="window-body" id="window-body"></div>
+</div>
 
 <script src="projects-data.js"></script>
 <script src="app.js"></script>
