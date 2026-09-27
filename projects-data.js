@@ -30,7 +30,7 @@ const FOLDERS = [
   {
     key: "design",
     label: "Design studies",
-    desc: "Architecture I diagrammed but didn't deploy — how I think through tradeoffs before committing infrastructure spend."
+    desc: "How I study and stress-test an idea before committing to it — research, comparisons, and diagrams, some of which turned straight into the builds above, some of which stayed exploration."
   },
   {
     key: "writing",
@@ -290,6 +290,21 @@ const PROJECTS = [
 
 const WRITING = [
   {
+    title: "Before the Algorithm",
+    blurb: "A shorter, more personal piece — off the AWS-build format of the rest of the feed.",
+    url: "https://medium.com/@ayotomiwavictor1/before-the-algorithm-9dc93ca904e2"
+  },
+  {
+    title: "Netflix's Three-Day Near-Death Experience",
+    blurb: "A look at a real production incident at Netflix's scale, and what it says about resilience under load.",
+    url: "https://medium.com/@ayotomiwavictor1/netflixs-three-day-near-death-experience-6e4f511a1c59"
+  },
+  {
+    title: "Pods, Nodes, and etcd: A Practical Breakdown of Kubernetes Architecture",
+    blurb: "The core Kubernetes building blocks explained the way I wish someone had explained them to me first.",
+    url: "https://medium.com/@ayotomiwavictor1/pods-nodes-and-etcd-a-practical-breakdown-of-kubernetes-architecture-7a7b10710cce"
+  },
+  {
     title: "Building a Zero-Touch CI/CD Pipeline on AWS: From IAM Headaches to a Live Self-Deploying API",
     blurb: "The IAM permission boundary problems that come up wiring CodePipeline to ECS, and how each one got resolved.",
     url: "https://medium.com/@ayotomiwavictor1/building-a-zero-touch-ci-cd-pipeline-on-aws-from-iam-headaches-to-a-live-self-deploying-api-5b6c57fbc700",
@@ -405,20 +420,5 @@ const WRITING = [
     title: "Proactive Cost Monitoring for a Personal AWS Project",
     blurb: "Getting ahead of a surprise AWS bill on a project with no revenue to absorb one.",
     url: "https://medium.com/@ayotomiwavictor1/challenge-proactive-cost-monitoring-for-a-personal-aws-project-404238cc0174"
-  },
-  {
-    title: "Pods, Nodes, and etcd: A Practical Breakdown of Kubernetes Architecture",
-    blurb: "The core Kubernetes building blocks explained the way I wish someone had explained them to me first.",
-    url: "https://medium.com/@ayotomiwavictor1/pods-nodes-and-etcd-a-practical-breakdown-of-kubernetes-architecture-7a7b10710cce"
-  },
-  {
-    title: "Netflix's Three-Day Near-Death Experience",
-    blurb: "A look at a real production incident at Netflix's scale, and what it says about resilience under load.",
-    url: "https://medium.com/@ayotomiwavictor1/netflixs-three-day-near-death-experience-6e4f511a1c59"
-  },
-  {
-    title: "Before the Algorithm",
-    blurb: "A shorter, more personal piece — off the AWS-build format of the rest of the feed.",
-    url: "https://medium.com/@ayotomiwavictor1/before-the-algorithm-9dc93ca904e2"
   }
 ];
