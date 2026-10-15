@@ -290,6 +290,11 @@ const PROJECTS = [
 
 const WRITING = [
   {
+    title: "Kafka Without the Fear: How a Message Really Travels",
+    blurb: "A plain-English walk through how a message moves through Kafka, from ZooKeeper to KRaft, acknowledgements, partitions and consumer groups.",
+    url: "https://medium.com/@ayotomiwavictor1/kafka-without-the-fear-how-a-message-really-travels-76f9d4e694d0"
+  },
+  {
     title: "Before the Algorithm",
     blurb: "A shorter, more personal piece — off the AWS-build format of the rest of the feed.",
     url: "https://medium.com/@ayotomiwavictor1/before-the-algorithm-9dc93ca904e2"
